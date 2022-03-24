@@ -4,7 +4,7 @@ import json
 
 def retrieve_messages(channel_id):
     headers = {
-        "authorization": "NzY0OTEyMTMyNzY4NTMwNDMy.YjNI6w.i4pqrTjeo-k7BPuH8qnejmi7Qgc"
+        "authorization": ""
     }
     r = requests.get(
         f"https://discord.com/api/v9/channels/{channel_id}/messages", headers=headers
@@ -20,4 +20,4 @@ def retrieve_messages(channel_id):
             print("Pokemon")
 
 
-retrieve_messages("956528701175124041")
+retrieve_messages("")
