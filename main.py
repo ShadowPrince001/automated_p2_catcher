@@ -6,12 +6,12 @@ from clear import clear_message
 from pokemon_list import pokemon_list
 from hint import hint_message
 
-channel_id = "956528701175124041"
+channel_id = ""
 
 
 def retrieve_messages(channel_id):
     headers = {
-        "authorization": "mfa.yZiDpjSp50M0Uv_B4zBOtkreV8ZU6mTscky4y9r7X-3N58e1t1bPAGAud5CsBtMD6SltqkrsVwPQv67BlVBr"
+        "authorization": ""
     }
     r = requests.get(
         f"https://discord.com/api/v9/channels/{channel_id}/messages", headers=headers
@@ -57,5 +57,5 @@ def retrieve_messages(channel_id):
 
 
 while True:
-    retrieve_messages("956528701175124041")
+    retrieve_messages(channel_id)
     time.sleep(10)
