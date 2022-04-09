@@ -1,4 +1,4 @@
-# Requirements
+# Requirements 
 
 •	Requires any software which can run python such as IDLE OR VS Code.
 
