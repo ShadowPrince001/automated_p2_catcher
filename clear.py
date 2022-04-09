@@ -3,7 +3,7 @@ import requests
 
 def clear_message():
 
-    payload = {"content": "?purge 10"}
+    payload = {"content": "?purge 50"}
     header = {
         "authorization": ""
     }
