@@ -12,7 +12,7 @@ Requirements:
 
 •	Requires any software which can run python such as IDLE OR VS Code.
 
-•	Requires to download discord library from command prompt.
+•	Requires to download discord library from command prompt.(py -3 -m pip install -U discord.py)
 
 •	Requires Discord account (preferably main and alt)
 
