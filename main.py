@@ -1,17 +1,25 @@
 import requests
 import json
 import time
+import helper
 from text_sender import send_message
 from clear import clear_message
 from pokemon_list import pokemon_list
 from hint import hint_message
 
-channel_id = ""
+config = helper.read_config()
+
+channel_id = config["Pokebot"]["channel_id"]
+
+authorization = config["Pokebot"]["authorization"]
+
+catch_rate = config["Pokebot"]["catch_rate"]
+
+catch_rate = int(catch_rate)
+
 
 def retrieve_messages(channel_id):
-    headers = {
-        "authorization": ""
-    }
+    headers = {"authorization": authorization}
     r = requests.get(
         f"https://discord.com/api/v9/channels/{channel_id}/messages", headers=headers
     )
@@ -53,9 +61,8 @@ def retrieve_messages(channel_id):
             clear_message()
             time.sleep(1)
             hint_message()
-   
-            
+
 
 while True:
-    retrieve_messages("")
-    time.sleep(5)
+    retrieve_messages(channel_id)
+    time.sleep(catch_rate)
