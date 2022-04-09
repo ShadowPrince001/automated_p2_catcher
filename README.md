@@ -1,4 +1,6 @@
-Poketwo AutoBot 
+![p2](https://user-images.githubusercontent.com/89309926/162590271-fefb08db-893d-4ea2-8817-dd5e3d8146b5.jpg)
+
+Poketwo AutoBot
 
 This specific selfbot was designed to automatically catch Pokemon spawned on Discord by PokeTwo bot. 
 
