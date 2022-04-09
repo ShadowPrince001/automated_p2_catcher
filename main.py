@@ -1,4 +1,4 @@
-import requests
+ort requests
 import json
 import time
 from text_sender import send_message
@@ -6,12 +6,11 @@ from clear import clear_message
 from pokemon_list import pokemon_list
 from hint import hint_message
 
-channel_id = ""
-
+channel_id = "960842073840435200"
 
 def retrieve_messages(channel_id):
     headers = {
-        "authorization": ""
+        "authorization": "mfa.yZiDpjSp50M0Uv_B4zBOtkreV8ZU6mTscky4y9r7X-3N58e1t1bPAGAud5CsBtMD6SltqkrsVwPQv67BlVBr"
     }
     r = requests.get(
         f"https://discord.com/api/v9/channels/{channel_id}/messages", headers=headers
@@ -23,12 +22,9 @@ def retrieve_messages(channel_id):
         attachment = value["attachments"]
         embed = value["embeds"]
         if "The pokémon is" in content:
-            print(content)
             slc = slice(15, -1)
             content = content[slc]
-            print(content)
             content = content.replace("\\", "")
-            print(content)
             length = len(content)
             count = 0
             for x in content:
@@ -43,19 +39,23 @@ def retrieve_messages(channel_id):
                     if counter == count:
                         print(a)
                         a = "p!c " + a
+                        time.sleep(1)
                         payload = {"content": a}
                         send_message(payload)
                         counter = 0
+                        time.sleep(1)
                         clear_message()
                     else:
                         counter = 0
 
         elif bool(embed) or bool(attachment):
+            time.sleep(1)
             clear_message()
-
+            time.sleep(1)
             hint_message()
-
+   
+            
 
 while True:
-    retrieve_messages(channel_id)
-    time.sleep(10)
+    retrieve_messages("960842073840435200")
+    time.sleep(5)
