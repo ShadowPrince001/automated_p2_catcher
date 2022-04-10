@@ -27,14 +27,15 @@ def retrieve_messages(channel_id):
         usercontent = value["author"]["username"]
         attachment = value["attachments"]
         embed = value["embeds"]
-        if "The pokémon is" in content:
-            slc = slice(15, -1)
-            content = content[slc]
+        if "The pokémon is " in content:
             content = content.replace("\\", "")
+            length = len(content)
+            slc = slice(15, length)
+            content = content[slc]
             length = len(content)
             count = 0
             for x in content:
-                if (x.isalpha()) == True:
+                if (x.isalpha()) == True or x == "-" or x == "'":
                     count += 1
             counter = 0
             for a in pokemon_list:
@@ -53,7 +54,6 @@ def retrieve_messages(channel_id):
                         clear_message()
                     else:
                         counter = 0
-
         elif bool(embed) or bool(attachment):
             time.sleep(1)
             clear_message()
